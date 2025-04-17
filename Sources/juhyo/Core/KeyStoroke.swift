@@ -1,10 +1,10 @@
 public enum KeyStroke {
-    case returnKey
+    case `return`
     case printable(Character)
-    case arrowUpKey
-    case arrowDownKey
-    case arrowLeftKey
-    case arrowRightKey
+    case arrowUp
+    case arrowDown
+    case arrowLeft
+    case arrowRight
     case backspace
     case delete
     case escape

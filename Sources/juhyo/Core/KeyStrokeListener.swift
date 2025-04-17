@@ -26,15 +26,15 @@ struct KeyStrokeListener {
             case let buffer where buffer.count == 1 && character.isPrintable:
                 .printable(character)
             case .returnKey:
-                .returnKey
+                .return
             case .arrowUpKey:
-                .arrowUpKey
+                .arrowUp
             case .arrowDownKey:
-                .arrowDownKey
+                .arrowDown
             case .arrowRightKey:
-                .arrowRightKey
+                .arrowRight
             case .arrowLeftKey:
-                .arrowLeftKey
+                .arrowLeft
             case .backspaceKey:
                 .backspace
             case .deleteKey:
