@@ -20,6 +20,9 @@ let package = Package(
                     name: "ArgumentParser",
                     package: "swift-argument-parser"
                 ),
+            ],
+            swiftSettings: [
+                .enableUpcomingFeature("ExistentialAny")
             ]
         ),
     ]

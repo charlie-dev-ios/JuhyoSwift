@@ -1,8 +1,9 @@
+import Foundation
 
 struct KeyStrokeListener {
-    private let terminal: Terminal
+    private let terminal: any Terminal
 
-    init(terminal: Terminal) {
+    init(terminal: some Terminal) {
         self.terminal = terminal
     }
 
