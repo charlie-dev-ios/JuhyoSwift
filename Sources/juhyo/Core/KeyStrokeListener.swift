@@ -1,5 +1,10 @@
 import Foundation
 
+public enum OnKeyPressResult {
+    case abort
+    case `continue`
+}
+
 struct KeyStrokeListener {
     private let terminal: any Terminal
 
@@ -50,22 +55,5 @@ struct KeyStrokeListener {
             }
         }
     }
-}
-
-public enum KeyStroke {
-    case returnKey
-    case printable(Character)
-    case arrowUpKey
-    case arrowDownKey
-    case arrowLeftKey
-    case arrowRightKey
-    case backspace
-    case delete
-    case escape
-}
-
-public enum OnKeyPressResult {
-    case abort
-    case `continue`
 }
 

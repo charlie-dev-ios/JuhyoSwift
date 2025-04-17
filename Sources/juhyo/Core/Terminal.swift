@@ -4,7 +4,7 @@ protocol Terminal {
     func readCharacter(nonBlockingMode: Bool) -> Character?
 }
 
-final class TerminalImpl: Terminal {
+struct TerminalImpl: Terminal {
     func readCharacter(nonBlockingMode: Bool) -> Character? {
         var term = termios()
         let stdinFileDescriptor = fileno(stdin) // Get file descriptor of standard input stream
