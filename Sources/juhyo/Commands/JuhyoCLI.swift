@@ -82,11 +82,22 @@ struct Sample: AsyncParsableCommand {
         """
         print(outputText)
 
-
         print("キー入力を監視中 (Ctrl+C で終了):")
-        let keyStrokeListener = KeyStrokeListener(terminal: TerminalImpl())
-        keyStrokeListener.listen(onKeyPress: { keystroke in
-            print(keystroke)
+
+        let terminal = TerminalImpl()
+        let renderer = RendererImpl(terminal: terminal)
+        let keyStrokeListener = KeyStrokeListener(terminal: terminal)
+
+        keyStrokeListener.listen(onKeyPress: { keyStroke in
+            if case .escape = keyStroke {
+                renderer.render("exit")
+                return .abort
+            }
+            if case .arrowUp = keyStroke {
+                renderer.moveCursorUp()
+                return .continue
+            }
+            renderer.render("\(keyStroke)")
             return .continue
         })
         _stdlib.exit(0)

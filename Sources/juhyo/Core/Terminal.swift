@@ -1,10 +1,15 @@
 import Darwin
 
 protocol Terminal {
+    func write(_ content: String)
     func readCharacter(nonBlockingMode: Bool) -> Character?
 }
 
-struct TerminalImpl: Terminal {
+final class TerminalImpl: Terminal {
+    func write(_ content: String) {
+        print(content, terminator: "")
+    }
+
     func readCharacter(nonBlockingMode: Bool) -> Character? {
         var term = termios()
         let stdinFileDescriptor = fileno(stdin) // Get file descriptor of standard input stream

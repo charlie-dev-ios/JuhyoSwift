@@ -10,4 +10,6 @@ extension String {
     static let deleteKey = "\u{7F}"
     static let escapeKey = "\u{1B}"
     static let returnKey = "\n"
+    static let deleteLine = "\u{1B}[2K"
+    static let moveUpKey = "\u{1B}[1A"
 }
